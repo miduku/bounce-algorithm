@@ -18,13 +18,6 @@ var eX, eY, // position
 		eX2, eY2,
 		eW = 2; // width
 
-// for ripple effect
-var rippleX, rippleY, // position
-		rippleWStart = 1,
-		rippleW = rippleWStart,
-		rDistance,
-		rRange;
-
 // for bounces on wall
 var bounces = 0,
 		bouncesMax,
@@ -60,11 +53,7 @@ function setup(){
 	eY = 0;
 	angle = radians(random(0,180));
 	radius = 8;
-	bouncesMax = 9;
-
-	// ripple effect setup
-	rDistance = 6;
-	rRange = 10; //less = bigger range
+	bouncesMax = 7;
 
 	// rectangle/background
 	background(h3, s3, b3);
@@ -86,20 +75,6 @@ function draw(){
 	// stroke(h,s,b,a);
 	strokeWeight(eW);
 	line(eX,eY, eX2,eY2);
-
-
-	// set distance between ripples
-	// rippleW = rippleW + Math.pow(rDistance,2);
-	// if (a2 >= 2) {
-	// 	a2 = a2 - rRange;
-	// }
-	// else {
-	// 	a2 = 0.1;
-	// }
-	// noFill();
-	// stroke(360,100,100,a2);
-	// // stroke(h2,60,50,a2);
-	// ellipse(rippleX,rippleY, rippleW,rippleW);
 
 
 	// quadrants:
@@ -202,19 +177,13 @@ function draw(){
 
 		// create new Dot at wall
 		dot[bouncesTotal] = new Dot();
-		dot[bouncesTotal].show();
-
-		// get coordinates from last Dot for starting point of the ripple effect
-		// rippleX = dot[bouncesTotal].x;
-		// rippleY = dot[bouncesTotal].y;
-		// rippleW = rippleWStart;
 
 		a2 = a2Start;
 
 		// draw triangle, start at third bounce
 		if (bouncesTotal >= 2) {
-			stroke(360,100,100);
-			fill(h3,s3,b3,10);
+			stroke(360,100,100,10);
+			fill(360,100,100,5);
 			triangle(
 				dot[bouncesTotal].x,dot[bouncesTotal].y, 
 				dot[bouncesTotal-1].x,dot[bouncesTotal-1].y,
@@ -222,27 +191,20 @@ function draw(){
 			);
 		}
 
-		// wipe trails a bit
-		// fill(h3,60,50,a3Wipe);
-		// fill(h3,s3,b3,a3Wipe);
-		// rect(0,0, width, height);
+		dot[bouncesTotal].show();
+
 		bouncesTotal++;
 	}
 	// fadeOut effect
-	fill(h3,s3,b3,a3);
-	rect(0,0, width, height);
+	// fill(h3,s3,b3,a3);
+	// rect(0,0, width, height);
 
 
 	// get last coordinate for drawing a line
 	eX2 = eX;
 	eY2 = eY;
 
-	console.log(bouncesTotal);
-	// console.log(bounces);
-	// console.log(a2);
-	// console.log(quadrant);
-	// console.log(angle * (180 / Math.PI));
-	// console.log('X: ' + eX + '| Y: ' + eY);
+	// console.log(bouncesTotal);
 }
 
 
@@ -280,5 +242,5 @@ var Dot = function() {
 Dot.prototype.show = function() {
 	noStroke();
 	fill(this.color);
-	ellipse(this.x,this.y, this.width*6,this.width*6);
+	ellipse(this.x,this.y, this.width*10,this.width*10);
 };
