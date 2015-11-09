@@ -210,6 +210,17 @@ function draw(){
 
 		a2 = a2Start;
 
+		// draw triangle, start at third bounce
+		if (bouncesTotal >= 2) {
+			stroke(360,100,100);
+			fill(h3,s3,b3,10);
+			triangle(
+				dot[bouncesTotal].x,dot[bouncesTotal].y, 
+				dot[bouncesTotal-1].x,dot[bouncesTotal-1].y,
+				dot[bouncesTotal-2].x,dot[bouncesTotal-2].y
+			);
+		}
+
 		// wipe trails a bit
 		// fill(h3,60,50,a3Wipe);
 		// fill(h3,s3,b3,a3Wipe);
@@ -225,9 +236,9 @@ function draw(){
 	eX2 = eX;
 	eY2 = eY;
 
-	// console.log(bouncesTotal);
+	console.log(bouncesTotal);
 	// console.log(bounces);
-	console.log(a2);
+	// console.log(a2);
 	// console.log(quadrant);
 	// console.log(angle * (180 / Math.PI));
 	// console.log('X: ' + eX + '| Y: ' + eY);
