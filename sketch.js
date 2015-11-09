@@ -75,10 +75,31 @@ function setup(){
 * this will be executed all the time
 */
 function draw(){
-
 	// translate from angle: polar to cartesian coordianates
-	eY += radius*sin(angle);
-	eX += radius*cos(angle);
+	eX += cartesianX(radius,angle);
+	eY += cartesianY(radius,angle);
+
+	
+	// DRAW LINE
+	stroke(360,100,100);
+	// stroke(h,s,b,a);
+	strokeWeight(eW);
+	line(eX,eY, eX2,eY2);
+
+
+	// set distance between ripples
+	rippleW = rippleW + Math.pow(rDistance,2);
+	if (a2 >= 2) {
+		a2 = a2 - rRange;
+	}
+	else {
+		a2 = 0.1;
+	}
+	noFill();
+	stroke(360,100,100,a2);
+	// stroke(h2,60,50,a2);
+	ellipse(rippleX,rippleY, rippleW,rippleW);
+
 
 	// quadrants:
 	// 1: 0° - 90°
@@ -165,40 +186,49 @@ function draw(){
 	else if (angle < radians(0)) {
 		angle += radians(360);
 	}
-	
-	// draw line
-	stroke(359,50,50);
-	strokeWeight(eW);
-	line(eX,eY, eX2,eY2);
 
-
+	// if specific amount of bouncing, reset position
 	if (bounces > bouncesMax) {
-		// reset position after a specific amount of bounces
 		noStroke();
 		eX = random(0,width);
 		eY = 0;	
 		angle = radians(random(0,180));
-		bounces = 0;
+		bounces = 0; // reset bounces counter
 	}
+	// if at wall-bounce, add thing
 	else if (eX === width || eY === height || eX === 0 || eY === 0) {
-		// at wall-bounce, add thing
+		h2 = random(0,360);
+
+		// create new Dot at wall
 		dot[bouncesTotal] = new Dot();
 		dot[bouncesTotal].show();
+
+		// get coordinates from last Dot for starting point of the ripple effect
+		rippleX = dot[bouncesTotal].x;
+		rippleY = dot[bouncesTotal].y;
+		rippleW = rippleWStart;
+
+		a2 = a2Start;
+
+		// wipe trails a bit
+		// fill(h3,60,50,a3Wipe);
+		// fill(h3,s3,b3,a3Wipe);
+		// rect(0,0, width, height);
 		bouncesTotal++;
 	}
+	// fadeOut effect
+	fill(h3,s3,b3,a3);
+	rect(0,0, width, height);
+
 
 	// get last coordinate for drawing a line
 	eX2 = eX;
 	eY2 = eY;
 
-	// nice fadeOut effect
-	// noStroke();
-	// fill(360, 100, 100, 0.8);
-	// rect(0,0, width, height);
-
-
+	// console.log(bouncesTotal);
 	// console.log(bounces);
-	console.log(quadrant);
+	console.log(a2);
+	// console.log(quadrant);
 	// console.log(angle * (180 / Math.PI));
 	// console.log('X: ' + eX + '| Y: ' + eY);
 }
