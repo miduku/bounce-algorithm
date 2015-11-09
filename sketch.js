@@ -8,16 +8,27 @@ var eX, eY,
 		eX2, eY2,
 		eW = 1;
 
+// for ripple effect
+var rX, rY,
+		rWStart = 1,
+		rW = rWStart,
+		rInterval,
+		rRange;
+
+var h2, 
+		a2Start =71;
+		a2 = a2Start;
+
 // for bounces on wall
 var bounces = 0,
-		bouncesMax = 5,
+		bouncesMax,
 		bouncesTotal = 0;
 
 // for conversion from polar to cartesian coordinates.
 // basically getting x and y from an angle and a radius.
 // angle: 0 to 360 ... duh
 var angle,
-		radius = 4; // sets the speed
+		radius ; // sets the speed
 
 var quadrant;
 
@@ -39,8 +50,13 @@ function setup(){
 	// start line at...
 	eX = random(0,width);
 	eY = 0;
-
 	angle = radians(random(0,180));
+	radius = 8;
+	bouncesMax = 9;
+
+	// ripple effect setup
+	rInterval = 6;
+	rRange = 2; //less = bigger range
 
 	// rectangle/background
 	background(360, 100, 100);
@@ -55,6 +71,26 @@ function draw(){
 	// translate from angle: polar to cartesian coordianates
 	eY += radius*sin(angle);
 	eX += radius*cos(angle);
+
+	
+	// DRAW LINE
+	stroke(h,s,b,a);
+	strokeWeight(eW);
+	line(eX,eY, eX2,eY2);
+
+
+	// DRAW RIPPLE EFFECT
+	rW = rW + Math.pow(rInterval,2);
+	if (a2 >= 2) {
+		a2 = a2 - rRange;
+	}
+	else {
+		a2 = 0.1;
+	}
+	noFill();
+	stroke(h2,60,50,a2);
+	ellipse(rX,rY, rW,rW);
+
 
 	// quadrants:
 	// 1: 0° - 90°
@@ -127,15 +163,9 @@ function draw(){
 	else if (angle < radians(0)) {
 		angle += radians(360);
 	}
-	
-	// draw line
-	stroke(359,50,50);
-	strokeWeight(eW);
-	line(eX,eY, eX2,eY2);
 
-
+	// if specific amount of bouncing, reset position
 	if (bounces > bouncesMax) {
-		// reset position after a specific amount of bounces
 		noStroke();
 		eX = random(0,width);
 		eY = 0;	
