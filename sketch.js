@@ -169,10 +169,21 @@ function draw(){
 		angle = radians(random(0,180));
 		bounces = 0;
 	}
+	// if at wall-bounce, add thing
 	else if (eX === width || eY === height || eX === 0 || eY === 0) {
-		// at wall-bounce, add thing
+		h2 = random(0,360);
+
+		// create new Dot at wall
 		dot[bouncesTotal] = new Dot();
 		dot[bouncesTotal].show();
+
+		// get coordinates from last Dot for starting point of the ripple effect
+		rX = dot[bouncesTotal].x;
+		rY = dot[bouncesTotal].y;
+		rW = rWStart;
+
+		a2 = a2Start;
+
 		bouncesTotal++;
 	}
 
@@ -182,12 +193,13 @@ function draw(){
 
 	// nice fadeOut effect
 	// noStroke();
-	// fill(360, 100, 100, 0.8);
+	// fill(h2, 50, 90, 50);
 	// rect(0,0, width, height);
 
-
+	// console.log(bouncesTotal);
 	// console.log(bounces);
-	console.log(quadrant);
+	console.log(a2);
+	// console.log(quadrant);
 	// console.log(angle * (180 / Math.PI));
 	// console.log('X: ' + eX + '| Y: ' + eY);
 }
@@ -197,11 +209,11 @@ function draw(){
 * Class Dot
 */
 // Dot constructor
-var Dot = function() {
+var Dot = function(x,y) {
 	this.x = eX;
 	this.y = eY;
 	this.width = eW;
-	this.color = color(360,0,0);
+	this.color = color(h2,50,50,50);
 };
 
 // show method
