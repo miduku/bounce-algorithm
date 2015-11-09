@@ -98,47 +98,61 @@ function draw(){
 		quadrant = 4;
 	}
 
-	// bounce from walls
+	// wall sides
+	if (eY < 0) {
+		wall = 1;
+	}
+	else if (eX > width) {
+		wall = 2;
+	}
+	else if (eY > height) {
+		wall = 3;
+	}
+	else if (eX < 0) {
+		wall = 4;
+	}
+
+	// if bounce from specific wall from specific angle
 	// 0° - 90°
-	if (quadrant === 1 && eX > width) { // right
+	if (quadrant === 1 && wall === 2) { // right
 		angle += radians(90);
 		bounces++;
 		eX = width;
 	}
-	else if (quadrant === 1 && eY > height) { // bottom
+	else if (quadrant === 1 && wall === 3) { // bottom
 		angle -= radians(90);
 		bounces++;
 		eY = height;
 	}
 	// 90° - 180°
-	else if (quadrant === 2 && eY > height) { // bottom
+	else if (quadrant === 2 && wall === 3) { // bottom
 		angle += radians(90);
 		bounces++;
 		eY = height;
 	}
-	else if (quadrant === 2 && eX < 0) { // left
+	else if (quadrant === 2 && wall === 4) { // left
 		angle -= radians(90);
 		bounces++;
 		eX = 0;
 	}
 	// 180° - 270°
-	else if (quadrant === 3 && eX < 0) { // left
+	else if (quadrant === 3 && wall === 4) { // left
 		angle += radians(90);
 		bounces++;
 		eX = 0;
 	}
-	else if (quadrant === 3 && eY < 0) { // top
+	else if (quadrant === 3 && wall === 1) { // top
 		angle -= radians(90);
 		bounces++;
 		eY = 0;
 	}
 	// 270° - 360°
-	else if (quadrant === 4 && eY < 0) { // top
+	else if (quadrant === 4 && wall === 1) { // top
 		angle += radians(90);
 		bounces++;
 		eY = 0;
 	}
-	else if (quadrant === 4 && eX > width) { // right
+	else if (quadrant === 4 && wall === 2) { // right
 		angle -= radians(90);
 		bounces++;
 		eX = width;
