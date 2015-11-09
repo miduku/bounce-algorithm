@@ -36,13 +36,17 @@ var wall;	// which wall? t,r,b,l?
 // for Dot
 var dot = [];
 
+// for filling whole document
+var w = window,
+		wX = w.innerWidth,
+		wY = w.innerHeight;
 
 
 /*
 * only executed once
 */
 function setup(){
-	createCanvas(800, 800);
+	createCanvas(wX, wY);
 	// createCanvas(1600/2, 900/2);
 
 	// change color mode to hsl
