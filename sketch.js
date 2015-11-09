@@ -209,7 +209,8 @@ var Dot = function() {
 	this.x = eX;
 	this.y = eY;
 	this.width = eW;
-	this.color = color(360,0,0);
+	this.color = color(360,100,100,100);
+	// this.color = color(h2,50,50,50);
 };
 
 // show method
