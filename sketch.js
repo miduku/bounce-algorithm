@@ -32,9 +32,6 @@ var angle,
 
 var quadrant;
 
-var canvasW = 500,
-		canvasH = 500;
-
 // for Dot
 var dot = [];
 
@@ -42,7 +39,7 @@ var dot = [];
 * only executed once
 */
 function setup(){
-	createCanvas(canvasW, canvasH);
+	createCanvas(1600, 900);
 
 	// change color mode to hsl
 	colorMode(HSL, 360, 100, 100, 100);
