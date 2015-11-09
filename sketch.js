@@ -184,6 +184,24 @@ function draw(){
 
 
 /*
+* custom functions
+*/
+// create cartesian coordinates
+function cartesianX(radius,angle) {
+	var x = radius*cos(angle);
+
+	return x;
+}
+
+function cartesianY(radius,angle) {
+	var y = radius*sin(angle);
+
+	return y;
+}
+
+
+
+/*
 * Class Dot
 */
 // Dot constructor
