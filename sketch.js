@@ -1,7 +1,29 @@
+var h = 263,
+		s = 60,
+		b = 50,
+		a = 10;
+
+var h2, 
+		a2Start = 71,
+		a2 = a2Start;
+
+var h3 = 360,
+		s3 = 60,
+		b3 = 25,
+		a3 = 2,
+		a3Wipe = 40;
+
 // vars for line
-var eX, eY,
+var eX, eY, // position
 		eX2, eY2,
-		eW = 1;
+		eW = 2; // width
+
+// for ripple effect
+var rippleX, rippleY, // position
+		rippleWStart = 1,
+		rippleW = rippleWStart,
+		rDistance,
+		rRange;
 
 // for bounces on wall
 var bounces = 0,
