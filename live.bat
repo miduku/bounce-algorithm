@@ -1,0 +1,1 @@
+CMD /k live-server
