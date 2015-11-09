@@ -27,28 +27,30 @@ var rippleX, rippleY, // position
 
 // for bounces on wall
 var bounces = 0,
-		bouncesMax = 5,
-		bouncesTotal = 0;
+		bouncesMax,
+		bouncesTotal = 0; // current total amount of bounces
 
 // for conversion from polar to cartesian coordinates.
 // basically getting x and y from an angle and a radius.
 // angle: 0 to 360 ... duh
 var angle,
-		radius = 4; // sets the speed
+		radius ; // sets the speed
 
 var quadrant;
 
-var canvasW = 500,
-		canvasH = 500;
+var wall;	// which wall? t,r,b,l?
 
 // for Dot
 var dot = [];
+
+
 
 /*
 * only executed once
 */
 function setup(){
-	createCanvas(canvasW, canvasH);
+	createCanvas(800, 800);
+	// createCanvas(1600/2, 900/2);
 
 	// change color mode to hsl
 	colorMode(HSL, 360, 100, 100, 100);
@@ -56,11 +58,16 @@ function setup(){
 	// start line at...
 	eX = random(0,width);
 	eY = 0;
-
 	angle = radians(random(0,180));
+	radius = 8;
+	bouncesMax = 9;
+
+	// ripple effect setup
+	rDistance = 6;
+	rRange = 10; //less = bigger range
 
 	// rectangle/background
-	background(360, 100, 100);
+	background(h3, s3, b3);
 }
 
 
