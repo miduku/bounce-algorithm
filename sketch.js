@@ -88,17 +88,17 @@ function draw(){
 
 
 	// set distance between ripples
-	rippleW = rippleW + Math.pow(rDistance,2);
-	if (a2 >= 2) {
-		a2 = a2 - rRange;
-	}
-	else {
-		a2 = 0.1;
-	}
-	noFill();
-	stroke(360,100,100,a2);
-	// stroke(h2,60,50,a2);
-	ellipse(rippleX,rippleY, rippleW,rippleW);
+	// rippleW = rippleW + Math.pow(rDistance,2);
+	// if (a2 >= 2) {
+	// 	a2 = a2 - rRange;
+	// }
+	// else {
+	// 	a2 = 0.1;
+	// }
+	// noFill();
+	// stroke(360,100,100,a2);
+	// // stroke(h2,60,50,a2);
+	// ellipse(rippleX,rippleY, rippleW,rippleW);
 
 
 	// quadrants:
@@ -204,9 +204,9 @@ function draw(){
 		dot[bouncesTotal].show();
 
 		// get coordinates from last Dot for starting point of the ripple effect
-		rippleX = dot[bouncesTotal].x;
-		rippleY = dot[bouncesTotal].y;
-		rippleW = rippleWStart;
+		// rippleX = dot[bouncesTotal].x;
+		// rippleY = dot[bouncesTotal].y;
+		// rippleW = rippleWStart;
 
 		a2 = a2Start;
 
