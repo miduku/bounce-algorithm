@@ -1,3 +1,8 @@
+var h = 263,
+		s = 60,
+		b = 50,
+		a = 10;
+
 // vars for line
 var eX, eY,
 		eX2, eY2,
