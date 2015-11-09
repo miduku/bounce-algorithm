@@ -70,7 +70,6 @@ function draw(){
 
 	
 	// DRAW LINE
-	noSmooth();
 	stroke(360,100,100,5);
 	// stroke(h,s,b,a);
 	strokeWeight(eW);
