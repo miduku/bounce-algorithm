@@ -8,8 +8,8 @@ var h2,
 		a2 = a2Start;
 
 var h3 = 360,
-		s3 = 60,
-		b3 = 25,
+		s3 = 10,
+		b3 = 10,
 		a3 = 2,
 		a3Wipe = 40;
 
@@ -81,7 +81,8 @@ function draw(){
 
 	
 	// DRAW LINE
-	stroke(360,100,100);
+	noSmooth();
+	stroke(360,100,100,5);
 	// stroke(h,s,b,a);
 	strokeWeight(eW);
 	line(eX,eY, eX2,eY2);
@@ -271,7 +272,7 @@ var Dot = function() {
 	this.x = eX;
 	this.y = eY;
 	this.width = eW;
-	this.color = color(360,100,100,100);
+	this.color = color(12,4,23,100);
 	// this.color = color(h2,50,50,50);
 };
 
