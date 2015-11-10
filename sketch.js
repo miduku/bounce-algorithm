@@ -59,9 +59,9 @@ function setup(){
 	colorMode(HSL, 360, 100, 100, 100);
 
 	// start line at...
-	eX = random(0,width);
-	eY = 0;
-	angle = radians(random(0,180));
+	eX = width/2;
+	eY = height/2;
+	angle = radians(random(0,360));
 	radius = 50; //speed of line drawing
 	bouncesMax = 7;
 
