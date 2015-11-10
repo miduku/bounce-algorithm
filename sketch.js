@@ -56,14 +56,14 @@ function setup(){
 	// createCanvas(1600/2, 900/2);
 
 	// change color mode to hsl
-	colorMode(HSL, 360, 100, 100, 100);
+	colorMode(HSB, 360, 100, 100, 100);
 
 	// start line at...
-	eX = width/2;
-	eY = height/2;
-	angle = radians(random(0,360));
-	radius = 50; //speed of line drawing
-	bouncesMax = 7;
+	eX = random(0,width);
+	eY = 0;
+	angle = radians(random(1,179));
+	radius = 10; //speed of line drawing
+	bouncesMax = 4;
 
 	// rectangle/background
 	background(h3, s3, b3);
