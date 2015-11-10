@@ -37,6 +37,11 @@ var wall;	// which wall? t,r,b,l?
 // for Dot
 var dot = [];
 
+// for saving position of corner of triangle
+var tWallPosX = [],
+		tWallPosY = [],
+		triangle = [];
+
 // for filling whole document
 var w = window,
 		wX = w.innerWidth,
@@ -178,26 +183,21 @@ function draw(){
 	// if at wall-bounce, add thing
 	else if (eX === width || eY === height || eX === 0 || eY === 0) {
 
+		// save position at wall
+		tWallPosX[bouncesTotal] = eX;
+		tWallPosY[bouncesTotal] = eY;
+
 		// create new Dot at wall
 		dot[bouncesTotal] = new Dot();
+		dot[bouncesTotal].show();
+		triangle[bouncesTotal] = new Triangle();
 
 		// draw triangle, start at third bounce
 		if (bouncesTotal >= 2) {
-			stroke(360,100,100,10);
-			// noStroke();
-			fill(h2,s2,b2,10);
-			triangle(
-				dot[bouncesTotal].x,dot[bouncesTotal].y, 
-				dot[bouncesTotal-1].x,dot[bouncesTotal-1].y,
-				dot[bouncesTotal-2].x,dot[bouncesTotal-2].y
-			);
-
-		// dot[bouncesTotal].show();
-		// dot[bouncesTotal-1].show();
-		// dot[bouncesTotal-2].show();
-
+			triangle[bouncesTotal].show();
 		}
 
+		// add count
 		bouncesTotal++;
 	}
 	// fadeOut effect
@@ -209,7 +209,7 @@ function draw(){
 	eX2 = eX;
 	eY2 = eY;
 
-	// console.log(bouncesTotal);
+	console.log(tWallPosX[3]);
 }
 
 
@@ -232,7 +232,7 @@ function cartesianY(radius,angle) {
 
 
 /*
-* Class Dot
+* Classes
 */
 // Dot constructor
 var Dot = function() {
@@ -246,6 +246,31 @@ var Dot = function() {
 // show method
 Dot.prototype.show = function() {
 	noStroke();
-	fill(this.color);
-	ellipse(this.x,this.y, this.width*5,this.width*5);
+	// fill(this.color);
+	// ellipse(this.x,this.y, this.width*5,this.width*5);
+};
+
+// Triangle constructor
+var Triangle = function() {
+	this.x1 = tWallPosX[bouncesTotal];
+	this.y1 = tWallPosY[bouncesTotal];
+	this.x2 = tWallPosX[bouncesTotal-1];
+	this.y2 = tWallPosY[bouncesTotal-1];
+	this.x3 = tWallPosX[bouncesTotal-2];
+	this.y3 = tWallPosY[bouncesTotal-2];
+
+	this.colorFill = color(h2,s2,b2,10);
+	this.colorStroke = color(360,100,100,10);
+};
+
+Triangle.prototype.show = function() {
+	stroke(this.colorStroke);
+	// noStroke();
+	fill(this.colorFill);
+
+	triangle(
+		this.x1,this.y1,
+		this.x2,this.y2,
+		this.x3,this.y3
+	);
 };
