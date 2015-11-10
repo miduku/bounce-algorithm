@@ -260,7 +260,7 @@ var Triangle = function() {
 	this.y3 = tWallPosY[bouncesTotal-2];
 
 	this.colorFill = color(h2,s2,b2,10);
-	this.colorStroke = color(360,100,100,10);
+	this.colorStroke = color(360,100,100,25);
 };
 
 Triangle.prototype.show = function() {
