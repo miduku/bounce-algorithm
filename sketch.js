@@ -171,6 +171,10 @@ function draw(){
 		angle += radians(360);
 	}
 
+	if (frameCount === 1) {
+		dot[bouncesTotal] = new Dot();
+		dot[bouncesTotal].show();
+	}
 	// if specific amount of bouncing, reset position
 	if (bounces > bouncesMax) {
 		noStroke();
