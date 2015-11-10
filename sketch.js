@@ -3,13 +3,14 @@ var h = 263,
 		b = 50,
 		a = 10;
 
-var h2, 
-		a2Start = 71,
-		a2 = a2Start;
+var h2 = 12,
+		s2 = 4,
+		b2 = 23,
+		a2 = 100;
 
 var h3 = 360,
 		s3 = 10,
-		b3 = 10,
+		b3 = 90,
 		a3 = 2,
 		a3Wipe = 40;
 
@@ -74,7 +75,7 @@ function draw(){
 
 	
 	// DRAW LINE
-	stroke(360,100,100,5);
+	stroke(h2,s2,b2,5);
 	// stroke(h,s,b,a);
 	strokeWeight(eW);
 	line(eX,eY, eX2,eY2);
@@ -176,30 +177,31 @@ function draw(){
 	}
 	// if at wall-bounce, add thing
 	else if (eX === width || eY === height || eX === 0 || eY === 0) {
-		h2 = random(0,360);
 
 		// create new Dot at wall
 		dot[bouncesTotal] = new Dot();
 
-		a2 = a2Start;
-
 		// draw triangle, start at third bounce
 		if (bouncesTotal >= 2) {
 			stroke(360,100,100,10);
-			fill(360,100,100,5);
+			// noStroke();
+			fill(h2,s2,b2,10);
 			triangle(
 				dot[bouncesTotal].x,dot[bouncesTotal].y, 
 				dot[bouncesTotal-1].x,dot[bouncesTotal-1].y,
 				dot[bouncesTotal-2].x,dot[bouncesTotal-2].y
 			);
-		}
 
-		dot[bouncesTotal].show();
+		// dot[bouncesTotal].show();
+		// dot[bouncesTotal-1].show();
+		// dot[bouncesTotal-2].show();
+
+		}
 
 		bouncesTotal++;
 	}
 	// fadeOut effect
-	// fill(h3,s3,b3,a3);
+	// fill(h3,s3,b3,1);
 	// rect(0,0, width, height);
 
 
@@ -237,7 +239,7 @@ var Dot = function() {
 	this.x = eX;
 	this.y = eY;
 	this.width = eW;
-	this.color = color(12,4,23,100);
+	this.color = color(h2,s2,b2,a2);
 	// this.color = color(h2,50,50,50);
 };
 
