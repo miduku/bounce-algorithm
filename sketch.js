@@ -247,5 +247,5 @@ var Dot = function() {
 Dot.prototype.show = function() {
 	noStroke();
 	fill(this.color);
-	ellipse(this.x,this.y, this.width*10,this.width*10);
+	ellipse(this.x,this.y, this.width*5,this.width*5);
 };
