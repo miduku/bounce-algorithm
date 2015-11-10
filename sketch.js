@@ -184,8 +184,15 @@ function draw(){
 		bounces = 0; // reset bounces counter
 		frameCount = 1;
 	}
+	// "cleaning on isle five"... reset the canvas
+	if (bouncesTotal%(bouncesMax*4) === (bouncesMax*4)-1) {
+		fill(h3,s3,b3,90);
+		noStroke();
+		rect(0,0, width, height);
+		frameCount = 1;
+	}
 	// if at wall-bounce, add thing
-	else if (eX === width || eY === height || eX === 0 || eY === 0) {
+	if (eX === width || eY === height || eX === 0 || eY === 0) {
 
 		// save position at wall
 		tWallPosX[bouncesTotal] = eX;
@@ -204,16 +211,14 @@ function draw(){
 		// add count
 		bouncesTotal++;
 	}
-	// fadeOut effect
-	// fill(h3,s3,b3,1);
-	// rect(0,0, width, height);
+
 
 
 	// get last coordinate for drawing a line
 	eX2 = eX;
 	eY2 = eY;
 
-	console.log(tWallPosX[3]);
+	console.log(bouncesTotal);
 }
 
 
