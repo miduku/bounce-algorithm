@@ -178,10 +178,11 @@ function draw(){
 	// if specific amount of bouncing, reset position
 	if (bounces > bouncesMax) {
 		noStroke();
-		eX = random(0,width);
-		eY = 0;	
+		// eX = random(0,width);
+		// eY = 0;	
 		angle = radians(random(0,180));
 		bounces = 0; // reset bounces counter
+		frameCount = 1;
 	}
 	// if at wall-bounce, add thing
 	else if (eX === width || eY === height || eX === 0 || eY === 0) {
