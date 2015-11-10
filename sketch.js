@@ -57,7 +57,7 @@ function setup(){
 	eX = random(0,width);
 	eY = 0;
 	angle = radians(random(0,180));
-	radius = 8;
+	radius = 10;
 	bouncesMax = 7;
 
 	// rectangle/background
