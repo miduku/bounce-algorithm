@@ -62,7 +62,7 @@ function setup(){
 	eX = random(0,width);
 	eY = 0;
 	angle = radians(random(0,180));
-	radius = 10;
+	radius = 50; //speed of line drawing
 	bouncesMax = 7;
 
 	// rectangle/background
