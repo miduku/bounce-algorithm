@@ -253,23 +253,26 @@ Dot.prototype.show = function() {
 var Triangle = function() {
 	this.x1 = tWallPosX[bouncesTotal];
 	this.y1 = tWallPosY[bouncesTotal];
-	this.x2 = tWallPosX[bouncesTotal-1];
-	this.y2 = tWallPosY[bouncesTotal-1];
-	this.x3 = tWallPosX[bouncesTotal-2];
-	this.y3 = tWallPosY[bouncesTotal-2];
+	this.x2 = tWallPosX[bouncesTotal-2];
+	this.y2 = tWallPosY[bouncesTotal-2];
 
-	this.colorFill = color(h2,s2,b2,10);
-	this.colorStroke = color(360,100,100,25);
+	// this.colorFill = color(h2,s2,b2,10);
+	this.colorStroke = color(h,s,b,a);
 };
 
 Triangle.prototype.show = function() {
 	stroke(this.colorStroke);
+	// noFill();
 	// noStroke();
-	fill(this.colorFill);
+	// fill(this.colorFill);
 
-	triangle(
+	// triangle(
+	// 	this.x1,this.y1,
+	// 	this.x2,this.y2,
+	// 	this.x3,this.y3
+	// );
+line(
 		this.x1,this.y1,
-		this.x2,this.y2,
-		this.x3,this.y3
+		this.x2,this.y2
 	);
 };
