@@ -79,7 +79,8 @@ function draw(){
 	// angleOff += 0.01;
 	// var nOff = noise(angleOff)*10;
 
-	eW = random(0,1);
+	// jitter
+	eW = random(0.5,1.5);
 	angle += radians(random(-1,1));
 
 	// translate from angle: polar to cartesian coordianates
