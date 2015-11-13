@@ -212,7 +212,8 @@ function draw(){
 		bouncesTotal++;
 	}
 
-
+	// fadeout effect
+	background(h3, s3, b3, 1);
 
 	// get last coordinate for drawing a line
 	eX2 = eX;
