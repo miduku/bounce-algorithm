@@ -17,7 +17,7 @@ var h3 = 0,
 // vars for line
 var eX, eY, // position
 		eX2, eY2,
-		eW = 2; // width
+		eW = 1; // width
 
 // for bounces on wall
 var bounces = 0,
@@ -29,6 +29,8 @@ var bounces = 0,
 // angle: 0 to 360 ... duh
 var angle,
 		radius ; // sets the speed
+
+var angleOff = 0.0;
 
 var quadrant;
 
@@ -74,6 +76,12 @@ function setup(){
 * this will be executed all the time
 */
 function draw(){
+	// angleOff += 0.01;
+	// var nOff = noise(angleOff)*10;
+
+	eW = random(0,1);
+	angle += radians(random(-1,1));
+
 	// translate from angle: polar to cartesian coordianates
 	eX += cartesianX(radius,angle);
 	eY += cartesianY(radius,angle);
@@ -213,7 +221,7 @@ function draw(){
 	eX2 = eX;
 	eY2 = eY;
 
-	console.log(bouncesTotal);
+	console.log(angle);
 }
 
 
