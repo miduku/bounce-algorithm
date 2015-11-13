@@ -46,19 +46,20 @@ var tWallPosX = [],
 
 // for filling whole document
 var w = window,
-		wX = w.innerWidth,
-		wY = w.innerHeight;
+		wX = w.innerWidth/2,
+		wY = w.innerHeight/2;
 
 
 /*
 * only executed once
 */
 function setup(){
-	createCanvas(wX, wY);
-	// createCanvas(1600/2, 900/2);
-
 	// change color mode to hsl
 	colorMode(HSB, 360, 100, 100, 100);
+	var bgrColor = color(h3, s3, b3);
+
+	var c = createCanvas(wX, wY);
+			c.parent("container");
 
 	// start line at...
 	eX = random(0,width);
@@ -68,7 +69,7 @@ function setup(){
 	bouncesMax = 4;
 
 	// rectangle/background
-	background(h3, s3, b3);
+	background(bgrColor);
 }
 
 
