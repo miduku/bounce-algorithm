@@ -248,16 +248,15 @@ function cartesianY(radius,angle) {
 var Dot = function() {
 	this.x = eX;
 	this.y = eY;
-	this.width = eW;
-	this.color = color(h,s,b,a);
-	// this.color = color(h2,50,50,50);
+	// this.width = eW;
+	// this.color = color(h,s,b,a);
 };
 
 // show method
 Dot.prototype.show = function() {
 	noStroke();
-	fill(this.color);
-	ellipse(this.x,this.y, this.width*5,this.width*5);
+	// fill(this.color);
+	// ellipse(this.x,this.y, this.width*5,this.width*5);
 };
 
 // Triangle constructor
