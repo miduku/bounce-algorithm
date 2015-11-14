@@ -7,13 +7,13 @@ Supervisor: [Fabian Morón Zirfas](https://fhp.incom.org/profil/270)
 
 This Project was realized with [P5js](http://p5js.org), a Processing library for JavaScript, during the course *Eingabe/Ausgabe* at the *University of Applied Sciences Potsdam*.
 
+**Final digital result: [here](http://miduku.github.io/bounce-algorithm/html-algorithm/index.html)**
+
 ## Beginnings
 Our first assignment was to create an *analog algorithm* and let our course-mates solve it. 
 It was very rudimentary and not very precise, which made us think about formulating it even better. 
 
 Several changes had to be made to come up with the first iteration for other people, instead of our course-mates, to solve:
-
-**Final digital result: [here](http://miduku.github.io/bounce-algorithm/html-algorithm/index.html)**
 
 ### v1.0a
 
