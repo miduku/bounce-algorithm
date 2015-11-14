@@ -83,6 +83,7 @@ Since I only implemented one rule into my algorithm at first (turning ninety deg
 The second rule was then to connect the corners with an additional line to create triangles every time the line reaches the edge.
 
 ### Result 3
+**Final digital result: [here](http://miduku.github.io/bounce-algorithm/html-algorithm/index.html)**
 
 ![v1.2.0-03](assets/img/v1.2.0_screen03.png)
 ![v1.2.0-04](assets/img/v1.2.0_screen04.png)
