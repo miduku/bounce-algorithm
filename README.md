@@ -13,6 +13,8 @@ It was very rudimentary and not very precise, which made us think about formulat
 
 Several changes had to be made to come up with the first iteration for other people, instead of our course-mates, to solve:
 
+**Final digital result: [here](http://miduku.github.io/bounce-algorithm/html-algorithm/index.html)**
+
 ### v1.0a
 
 	German:
