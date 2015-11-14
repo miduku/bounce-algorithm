@@ -5,13 +5,13 @@ Semester: Winter 2015/16
 Course: [11EG-B: Eingabe/Ausgabe (Steel Ant)](https://incom.org/workspace/6176)  
 Supervisor: [Fabian Morón Zirfas](https://fhp.incom.org/profil/270)
 
-This Project was realized with [P5js](http://p5js.org), a Processing library for JavaScript, during the course *Eingabe/Ausgabe* at the  *University of Applied Sciences Potsdam*.
+This Project was realized with [P5js](http://p5js.org), a Processing library for JavaScript, during the course *Eingabe/Ausgabe* at the *University of Applied Sciences Potsdam*.
 
 ## Beginnings
-Our first assignment was to create an *analog algorithm* and make our course-mates solve it. 
-It was very rudimentary and not very precise , which made us think about formulating it even better. 
+Our first assignment was to create an *analog algorithm* and let our course-mates solve it. 
+It was very rudimentary and not very precise, which made us think about formulating it even better. 
 
-Several changes had to be made to come up with the first iteration for other people,instead of our course-mates, to solve:
+Several changes had to be made to come up with the first iteration for other people, instead of our course-mates, to solve:
 
 ### v1.0a
 
@@ -35,6 +35,7 @@ Several changes had to be made to come up with the first iteration for other peo
 	Draw on white square notepaper.
 	No other tools may be used.
 
+
 ### Result
 
 ![v1.0a-01](assets/img/algorithmus-v1.0a.jpg)
@@ -44,7 +45,7 @@ Several changes had to be made to come up with the first iteration for other peo
 ## Continuation
 As one can see, the first iteration of the analog algorithm resulted in different results. Our next assignment was therefor to edit the whole code even more to see what the changes will result to.
 
-For this second iteration we asked people again to solve it, which resulted to this:
+For this second iteration we asked people again to solve it:
 
 ### v1.1a
 	German:
@@ -65,6 +66,7 @@ For this second iteration we asked people again to solve it, which resulted to t
 	3. Repeat the first two steps 9 times. Continue drawing the last line until you reach the edge of the canvas.
 	4. Lift the pen and repeat all steps (from the first) as often as the amount of your hand wrinkles.
 
+
 ### Result 2
 
 ![v1.1a-01](assets/img/algorithmus-v1.1a.jpg)
@@ -73,8 +75,10 @@ For this second iteration we asked people again to solve it, which resulted to t
 
 ## Digital translation
 
-Our final assignment was to translate our analog algorithm into a digital one and  wrote our code in JavaScript using P5js. Since I only implemented one rule into my algorithm at first (turning ninety degrees at the edge of the canvas), I had to think of a second one to make it more *interesting*.
-The second rule was to connect the corners with an additional line to create triangles every time the line reaches the edge.
+Our final assignment of the project was to translate our analog algorithm into a digital one. We wrote our code in JavaScript using P5js. 
+
+Since I only implemented one rule into my algorithm at first (turning ninety degrees at the edge of the canvas), I had to think of a second one to make it more *interesting*.
+The second rule was then to connect the corners with an additional line to create triangles every time the line reaches the edge.
 
 ### Result 3
 
