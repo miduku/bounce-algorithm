@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Bounce-algorithm by miduku</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Bounce-algorithm</h1>
+        <p>University of Applied Sciences Potsdam; Course 11EG-B - Eingabe/Ausgabe; WiSe 2015/16</p>
+
+        <p class="view"><a href="https://github.com/miduku/bounce-algorithm">View the Project on GitHub <small>miduku/bounce-algorithm</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/miduku/bounce-algorithm/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/miduku/bounce-algorithm/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/miduku/bounce-algorithm">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="bounce-algorithm" class="anchor" href="#bounce-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bounce Algorithm</h1>
+
+<p><a href="http://www.fh-potsdam.de/">University of Applied Sciences Potsdam</a><br>
+Semester: Winter 2015/16<br>
+Course: <a href="https://incom.org/workspace/6176">11EG-B: Eingabe/Ausgabe (Steel Ant)</a><br>
+Supervisor: <a href="https://fhp.incom.org/profil/270">Fabian Morón Zirfas</a></p>
+
+<p>This Project was realized with <a href="http://p5js.org">P5js</a>, a Processing library for JavaScript, during the course <em>Eingabe/Ausgabe</em> at the <em>University of Applied Sciences Potsdam</em>.</p>
+
+<h2>
+<a id="beginnings" class="anchor" href="#beginnings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beginnings</h2>
+
+<p>Our first assignment was to create an <em>analog algorithm</em> and let our course-mates solve it. 
+It was very rudimentary and not very precise, which made us think about formulating it even better. </p>
+
+<p>Several changes had to be made to come up with the first iteration for other people, instead of our course-mates, to solve:</p>
+
+<h3>
+<a id="v10a" class="anchor" href="#v10a" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.0a</h3>
+
+<pre><code>German:
+1. Setze den Stift an einer beliebigen Stelle am Rand der Zeichenfläche an.
+2. Zeichne eine gerade Linie in beliebiger Richtung, jedoch so, dass sie nicht 90° oder 0° vom Rand positioniert ist. 
+3. Falls man den Rand der Zeichenfläche erreicht, ändere die Richtung um 90° und führe die Zeichnung fort.
+4. Nach der 10. Richtungsänderung, führe die Zeichnung fort bis der Rand der Zeichenfläche erreicht wurde.
+5. Hebe den Stift an und wiederhole den ersten Schritt so oft wie man mag.
+Verwende einen beliebigen schwarzen Stift. 
+Zeichne auf einem weißen quadratischen Notizzettel.
+Keine weiteren Werkzeuge dürfen verwendet werden
+
+English:
+1. Put down pen at any place of the edge of the artboard.
+2. Draw a staight line in any direction but it mustn't be positioned 90° or 0° from the edge.
+3. If you arrive at the edge of the artboard, change the direction to 90° and continue drawing.
+4. After repeating changing direction 10 times, continue drawing the line until you arrive at the edge of the artboard.
+5. Lift the pen and repeat step 1 as often as you like.
+Use any black pen.
+Draw on white square notepaper.
+No other tools may be used.
+</code></pre>
+
+<h3>
+<a id="result" class="anchor" href="#result" aria-hidden="true"><span class="octicon octicon-link"></span></a>Result</h3>
+
+<p><img src="assets/img/algorithmus-v1.0a.jpg" alt="v1.0a-01">
+<img src="assets/img/algorithmus-v1.0b.jpg" alt="v1.0a-02"></p>
+
+<h2>
+<a id="continuation" class="anchor" href="#continuation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuation</h2>
+
+<p>As one can see, the first iteration of the analog algorithm resulted in different results. Our next assignment was therefor to edit the whole code even more to see what the changes will result to.</p>
+
+<p>For this second iteration we asked people again to solve it:</p>
+
+<h3>
+<a id="v11a" class="anchor" href="#v11a" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1a</h3>
+
+<pre><code>German:
+Lese alle Schritte gründlich durch, verwende die beigelegten Stifte (schwarz, rot) und zeichne auf den beigelegten Zettel.
+Zähle und merke dir wieviele Handfalten du auf deiner linken Hand hast. Schreibe diese Zahl zusätzlich unten rechts auf die Rückseite des Zettels auf.
+Keine weiteren Werkzeuge dürfen verwendet werden.
+1. Fange am oberen Rand der Zeichenfläche an mit dem roten Stift eine gerade Linie zu zeichnen; Die Linie muss einen anderen Rand erreichen.
+2. Beim Erreichen des Randes, setze dort einen schwarzen Punkt. Ändere die Richtung um einen rechten Winkel und führe die Zeichnung (wie im ersten Schritt) mit dem roten Stift fort.
+3. Wiederhole die ersten beiden Schritte 9 mal. Führe die letzte Zeichnung fort bis der Rand der Zeichenfläche erreicht wurde.
+4. Hebe den Stift an und wiederhole alle Schritte (ab dem ersten) so oft wie die Anzahl deiner Handfalten.
+
+English:
+Thoroughly read all the steps, use the given pens (black, red) and draw on the given piece of paper.
+Count and remember how many hand wrinkles you have on your left hand. Write down this number on the lower right of the back of the piece of paper.
+No other tools may be used.
+1. Start from the upper edge of the canvas and continuously draw a straight line with the red pen; The line must reach another edge.
+2. Upon reaching the edge, place a black dot there. Change your direction to a right angle und continue your drawing (like in step one) with the red pen.
+3. Repeat the first two steps 9 times. Continue drawing the last line until you reach the edge of the canvas.
+4. Lift the pen and repeat all steps (from the first) as often as the amount of your hand wrinkles.
+</code></pre>
+
+<h3>
+<a id="result-2" class="anchor" href="#result-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Result 2</h3>
+
+<p><img src="assets/img/algorithmus-v1.1a.jpg" alt="v1.1a-01">
+<img src="assets/img/algorithmus-v1.1b.jpg" alt="v1.1a-02"></p>
+
+<h2>
+<a id="digital-translation" class="anchor" href="#digital-translation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital translation</h2>
+
+<p>Our final assignment of the project was to translate our analog algorithm into a digital one. We wrote our code in JavaScript using P5js. </p>
+
+<p>Since I only implemented one rule into my algorithm at first (turning ninety degrees at the edge of the canvas), I had to think of a second one to make it more <em>interesting</em>.
+The second rule was then to connect the corners with an additional line to create triangles every time the line reaches the edge.</p>
+
+<h3>
+<a id="result-3" class="anchor" href="#result-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Result 3</h3>
+
+<p><img src="assets/img/v1.2.0_screen03.png" alt="v1.2.0-03">
+<img src="assets/img/v1.2.0_screen04.png" alt="v1.2.0-04">
+<img src="assets/img/v1.2.0_screen05.png" alt="v1.2.0-05">
+<img src="assets/img/v1.2.0_screen06.png" alt="v1.2.0-06">
+<img src="assets/img/v1.2.0_screen08.png" alt="v1.2.0-08"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/miduku">miduku</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
