@@ -45,7 +45,7 @@ Several changes had to be made to come up with the first iteration for other peo
 
 
 ## Continuation
-As one can see, the first iteration of the analog algorithm resulted in different results. Our next assignment was therefor to edit the whole code even more to see what the changes will result to.
+As one can see, the first iteration of the analog algorithm resulted in different results. Our next assignment was therefore to edit the whole code even more to see what the changes will result to.
 
 For this second iteration we asked people again to solve it:
 
@@ -90,3 +90,18 @@ The second rule was then to connect the corners with an additional line to creat
 ![v1.2.0-05](assets/img/v1.2.0_screen05.png)
 ![v1.2.0-06](assets/img/v1.2.0_screen06.png)
 ![v1.2.0-08](assets/img/v1.2.0_screen08.png)
+
+
+## Mockups
+
+As this algorithm works best in its animated form coming up with possible real life implementations seemed rather difficult but not impossible. The following list, with its corresponding images bellow, shows some ideas of of such implementations:
+
+1. Animated CD-Cover with LED Display (animated mockup)
+2. Animated art pieces with LED Display on the wall (animated mockup)
+3. Animated 'Live Wallpapers' for smartphones
+4. Reaction based smartphone game
+
+![Animated CD-Cover with LED Display](assets/img/mockup-cdcover.png)
+![Animated art pieces with LED Display on the wall](assets/img/mockup-wall.png)
+![Animated 'Live Wallpapers' for smartphones](assets/img/mockup-n4-animwallpaper.png)
+![Reaction based smartphone game](assets/img/mockup-n4-game.png)
