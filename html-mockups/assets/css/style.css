@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+
+* {
+  box-sizing: border-box;
+  font-size: 0;
+  line-height: 0;
+  height: 100%;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: hsl(0,0%, 15%);
+  font-family: 'Roboto', sans-serif;
+}
+
+.frame {
+  display: block;
+  border: none;  
+  position: absolute;
+}
+
+/* mockup: cs cover */
+.m-cdCover body {
+  background: #000 url(../img/m-cdcover.png) 50% 50% no-repeat;
+}
+
+  .cdCover {
+    top: 50%;
+    left: 50%;
+    margin-top: -266px;
+    margin-left: -275px;
+    width: 551px;
+    height: 528px;
+  }
+
+    .cdCover.title {
+      color: hsl(360,0%,90%);
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+      font-size: 50px;
+      text-align: center;
+      line-height: 528px;
+    }
+
+/* mockup: wall */
+.m-wall body {
+  background: #000 url(../img/m-wall.png) 50% 0 no-repeat;
+}
+
+  .m-wall .frame {
+    box-shadow: 2px 1px 4px 0px rgba(0,0,0,0.6);
+    border: 8px solid #000;
+    border-radius: 2px;
+    left: 50%;
+  }
+
+    .m-wall .wall01 {   
+      top: 150px;
+      margin-left: -220px;
+      width: 200px;
+      height: 150px;
+    }
+    
+    .m-wall .wall02 {   
+      top: 100px;
+      margin-left: 0px;
+      width: 400px;
+      height: 200px;
+    }
+
+    .m-wall .wall03 {   
+      top: 320px;
+      margin-left: -80px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .m-wall .wall04 {   
+      top: 320px;
+      margin-left: 140px;
+      width: 100px;
+      height: 400px;
+    }
