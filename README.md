@@ -94,7 +94,7 @@ The second rule was then to connect the corners with an additional line to creat
 
 ## Mockups
 
-As this algorithm works best in its animated form coming up with possible real life implementations seemed rather difficult but not impossible. The following list, with its corresponding images bellow, shows some ideas of of such implementations:
+As this algorithm works best in its animated form coming up with possible real life implementations seemed rather difficult but not impossible. The following list, with its corresponding images bellow, shows some ideas of such implementations:
 
 1. Animated CD-Cover with LED Display (animated mockup)
 2. Animated art pieces with LED Display on the wall (animated mockup)
