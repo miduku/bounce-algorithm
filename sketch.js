@@ -59,8 +59,7 @@ var specChange = [],
 */
 function preload(){
 	// add audio
-	sound = loadSound('assets/xKore-State-of-Confusion.mp3');
-	// sound = loadSound('assets/koop-absolute-space-jazzanova-mix.mp3');
+	sound = loadSound('assets/some-soundfile.mp3');
 }
 
 
