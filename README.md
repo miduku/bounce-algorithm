@@ -96,8 +96,8 @@ The second rule was then to connect the corners with an additional line to creat
 
 As this algorithm works best in its animated form coming up with possible real life implementations seemed rather difficult but not impossible. The following list, with its corresponding images bellow, shows some ideas of such implementations:
 
-1. Animated CD-Cover with LED Display (animated mockup)
-2. Animated art pieces with LED Display on the wall (animated mockup)
+1. Animated CD-Cover with LED Display [(animated mockup)](http://miduku.github.io/bounce-algorithm/html-mockups/index-cdcover.html)
+2. Animated art pieces with LED Display on the wall [(animated mockup)](http://miduku.github.io/bounce-algorithm/html-mockups/index-wall.html)
 3. Animated 'Live Wallpapers' for smartphones
 4. Reaction based smartphone game
 
